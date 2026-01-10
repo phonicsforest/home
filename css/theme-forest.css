@@ -864,3 +864,36 @@ footer {
   width: auto;         /* ✅ 保持比例 */
   display: block;
 }
+
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 60px;              /* 跟 header 高度 */
+    right: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    border-top: 1px solid #ddd;
+    z-index: 999;
+  }
+
+  .main-nav a {
+    padding: 14px 20px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .main-nav.show {
+    display: flex;
+  }
+
+  .nav-whatsapp {
+    justify-content: center;
+    padding: 12px 0;
+  }
+}
