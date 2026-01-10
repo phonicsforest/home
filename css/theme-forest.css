@@ -894,9 +894,9 @@ footer {
 
   .main-nav a {
     padding: 10px 16px;
-line-height: 1.2;     /* 🔽 壓行距 */
+line-height: 0.6;     /* 🔽 壓行距 */
     font-size: 0.95rem;   /* 可選：輕微細一點 */
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #7b4a1e;
     color: var(--forest-brown-deep); /* 深啡 */
   }
 
