@@ -865,22 +865,63 @@ footer {
   display: block;
 }
 
+/* ===== Desktop / Tablet ===== */
+.menu-toggle {
+  display: none;
+}
+
+/* 主選單橫向 */
+#mainNav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;   /* 🔑 全部置中 */
+  align-items: center;
+  position: relative;
+}
+
+/* 桌面選單 */
+.main-nav {
+  display: flex;
+  gap: 28px;
+}
+
+
 @media (max-width: 768px) {
 
   .menu-toggle {
-    display: block;
+display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;          /* 🔵 圓形 */
+    background: #7b4a1e;         /* 深啡 */
+    color: #fff;
+    font-size: 20px;
+
+    border: none;
+    cursor: pointer;
+
+    position: absolute;
+    right: 16px;                 /* 右上角 */
+    top: 10px;
   }
 
-  .main-nav {
+.main-nav {
     display: none;
-    position: absolute;
-    top: 60px;              /* 跟 header 高度 */
-    right: 0;
-    width: 100%;
-    background: #fff;
     flex-direction: column;
-    border-top: 1px solid #ddd;
-    z-index: 999;
+    background: #fff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 12px 0;
+    border-top: 1px solid #eee;
   }
 
 .main-nav a:hover {
@@ -893,11 +934,22 @@ footer {
   }
 
   .main-nav a {
-    padding: 10px 16px;
-line-height: 0.6;     /* 🔽 壓行距 */
-    font-size: 0.95rem;   /* 可選：輕微細一點 */
-    border-bottom: 1px solid #7b4a1e;
-    color: var(--forest-brown-deep); /* 深啡 */
+ padding: 10px 16px;          /* 🔑 扁啲（原本太高） */
+    color: #5a3414;              /* 深啡字 */
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+
+/* 初始隱藏 menu */
+  #mainNav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* ☰ click 後顯示 */
+  #mainNav.show {
+    display: flex;
   }
 
   .main-nav.show {
@@ -908,4 +960,9 @@ line-height: 0.6;     /* 🔽 壓行距 */
     justify-content: center;
     padding: 12px 0;
   }
+.main-nav.open {
+    display: flex;
+    flex-direction: column;
+  }
+
 }
