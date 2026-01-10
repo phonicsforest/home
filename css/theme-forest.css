@@ -883,9 +883,21 @@ footer {
     z-index: 999;
   }
 
+.main-nav a:hover {
+    background: rgba(123, 74, 30, 0.08);
+  }
+
+  .main-nav a.active {
+    background: var(--forest-brown-deep);
+    color: #fff;
+  }
+
   .main-nav a {
-    padding: 14px 20px;
+    padding: 10px 16px;
+line-height: 1.2;     /* 🔽 壓行距 */
+    font-size: 0.95rem;   /* 可選：輕微細一點 */
     border-bottom: 1px solid #eee;
+    color: var(--forest-brown-deep); /* 深啡 */
   }
 
   .main-nav.show {
