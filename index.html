@@ -30,9 +30,11 @@ body {
      =============================== -->
 <header class="site-header">
   <div class="nav-container nav-clean">
-
+<button class="menu-toggle" aria-label="Open menu">
+      ☰
+    </button>
     <!-- 左：Menu -->
-    <nav class="main-nav">
+    <nav class="main-nav" id="mainNav">
       <a href="index.html" class="active">Home</a>
       <a href="courses.html">Courses</a>
       <a href="about.html">About Us</a>
@@ -334,6 +336,14 @@ and spiral revision to help children and adults build long-term reading and spel
 
 
 
+</script>
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('mainNav');
+
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('show');
+  });
 </script>
 
 
