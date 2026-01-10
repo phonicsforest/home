@@ -86,7 +86,8 @@ flex-shrink: 0;
   height: 48px;
   min-height: 38px;
   max-height: 38px;
-
+position: relative;
+  z-index: 1000;   /* header 本身提到上層 *
   display: flex;
   align-items: center;
 }
@@ -896,13 +897,13 @@ align-items: stretch;
 display: flex;
     align-items: center;
     justify-content: center;
-
-    width: 40px;
-    height: 40px;
+z-index: 1100;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;          /* 🔵 圓形 */
     background: #7b4a1e;         /* 深啡 */
     color: #fff;
-    font-size: 20px;
+    font-size: 24px;
 
     border: none;
     cursor: pointer;
@@ -922,6 +923,7 @@ display: flex;
     width: 100%;
     padding: 12px 0;
     border-top: 1px solid #eee;
+z-index: 1100;
   }
 
 .main-nav a:hover {
@@ -934,17 +936,20 @@ display: flex;
   }
 
   .main-nav a {
- padding: 10px 16px;          /* 🔑 扁啲（原本太高） */
+ padding: 12px 18px;          /* 🔑 扁啲（原本太高） */
     color: #5a3414;              /* 深啡字 */
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 1rem;
+  }
+.main-nav a:not(:last-child) {
+    border-bottom: 1px solid #eee;
   }
 
 /* 初始隱藏 menu */
   #mainNav {
     display: none;
     flex-direction: column;
-    width: 100%;
+   // width: 100%;
   }
 
   /* ☰ click 後顯示 */
