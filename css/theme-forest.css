@@ -803,3 +803,64 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+/* ===== Clean Header Layout ===== */
+
+.nav-clean {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Menu 左對齊 */
+.main-nav {
+  display: flex;
+  gap: 18px;
+  white-space: nowrap;
+}
+
+/* Menu 字唔會被切 */
+.main-nav a {
+  white-space: nowrap;
+}
+
+/* WhatsApp icon */
+.nav-whatsapp img {
+  width: 28px;
+  height: 28px;
+}
+
+/* ===== Mobile Handling ===== */
+@media (max-width: 768px) {
+
+  .nav-clean {
+    gap: 12px;
+  }
+
+  /* Menu 可左右滑動，唔會 cut */
+  .main-nav {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .main-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .main-nav a {
+    font-size: 0.9rem;
+  }
+
+  /* WhatsApp 保證可見 */
+  .nav-whatsapp {
+    flex-shrink: 0;
+  }
+}
+
+/* WhatsApp icon fit menu bar height */
+.nav-whatsapp img {
+  height: 24px;        /* ✅ 跟 menubar 高度調整 */
+  width: auto;         /* ✅ 保持比例 */
+  display: block;
+}
