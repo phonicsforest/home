@@ -821,38 +821,12 @@ footer {
   height: 28px;
 }
 
-/* ===== Mobile Handling ===== */
-@media (max-width: 768px) {
-
-  .nav-clean {
-    gap: 12px;
-  }
-
-  
-  .main-nav::-webkit-scrollbar {
-    display: none;
-  }
-
-  .main-nav a {
-    font-size: 0.9rem;
-  }
-
-  /* WhatsApp 保證可見 */
-  .nav-whatsapp {
-    flex-shrink: 0;
-  }
-}
 
 /* ===== Desktop / Tablet ===== */
 .menu-toggle {
   display: none;
 }
 
-/* 主選單橫向 */
-#mainNav {
-  display: flex;
-  gap: 20px;
-}
 
 .nav-container {
   display: flex;
