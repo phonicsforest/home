@@ -83,11 +83,9 @@ flex-shrink: 0;
   background: var(--forest-brown);
   border-bottom: 3px solid var(--forest-green-main);
 
-  height: 48px;
-  min-height: 38px;
-  max-height: 38px;
+  height: 38px;
 position: relative;
-  z-index: 1000;   /* header 本身提到上層 *
+  z-index: 1000;   /* header 本身提到上層 */
   display: flex;
   align-items: center;
 }
@@ -804,13 +802,6 @@ footer {
   }
 }
 
-/* ===== Clean Header Layout ===== */
-
-.nav-clean {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 
 /* Menu 左對齊 */
 .main-nav {
@@ -837,13 +828,7 @@ footer {
     gap: 12px;
   }
 
-  /* Menu 可左右滑動，唔會 cut */
-  .main-nav {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
+  
   .main-nav::-webkit-scrollbar {
     display: none;
   }
@@ -856,13 +841,6 @@ footer {
   .nav-whatsapp {
     flex-shrink: 0;
   }
-}
-
-/* WhatsApp icon fit menu bar height */
-.nav-whatsapp img {
-  height: 24px;        /* ✅ 跟 menubar 高度調整 */
-  width: auto;         /* ✅ 保持比例 */
-  display: block;
 }
 
 /* ===== Desktop / Tablet ===== */
@@ -910,46 +888,28 @@ z-index: 1100;
 
     position: absolute;
     right: 16px;                 /* 右上角 */
-    top: 10px;
+    top: 8px;
   }
 
-.main-nav {
-    display: none;
-    flex-direction: column;
-    background: #fff;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    padding: 12px 0;
-    border-top: 1px solid #eee;
-z-index: 1100;
-  }
-
-.main-nav a:hover {
-    background: rgba(123, 74, 30, 0.08);
-  }
-
-  .main-nav a.active {
-    background: var(--forest-brown-deep);
-    color: #fff;
-  }
-
-  .main-nav a {
- padding: 12px 18px;          /* 🔑 扁啲（原本太高） */
-    color: #5a3414;              /* 深啡字 */
-    text-decoration: none;
-    font-size: 1rem;
-  }
+  
 .main-nav a:not(:last-child) {
     border-bottom: 1px solid #eee;
   }
 
 /* 初始隱藏 menu */
-  #mainNav {
+  
+#mainNav {
     display: none;
+    position: absolute;
+    top: 100%;              /* 🔑 貼住 header 底 */
+    left: 0;
+    width: 100%;
+
+    background: #ffffff;
+    z-index: 1050;
+
     flex-direction: column;
-   // width: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
   }
 
   /* ☰ click 後顯示 */
@@ -957,17 +917,32 @@ z-index: 1100;
     display: flex;
   }
 
-  .main-nav.show {
-    display: flex;
+/* Menu item */
+  #mainNav a {
+    padding: 14px 18px;
+    font-size: 1rem;
+    color: #5a3414;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
   }
 
-  .nav-whatsapp {
-    justify-content: center;
-    padding: 12px 0;
+  #mainNav a.active {
+    background: var(--forest-brown-deep);
+    color: #fff;
   }
-.main-nav.open {
+
+}
+
+@media (min-width: 769px) {
+
+  .menu-toggle {
+    display: none;
+  }
+
+  #mainNav {
     display: flex;
-    flex-direction: column;
+    gap: 28px;
+    align-items: center;
   }
 
 }
