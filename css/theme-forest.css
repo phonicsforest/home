@@ -918,17 +918,17 @@ align-items: stretch;
 
   /* ===== Menu item ===== */
   #mainNav a {
-    width: 100%;
+    width: 50%;
     text-align: center;            /* ✅ 字置中 */
 
     padding: 10px 0;               /* ✅ 扁身 */
-    font-size: 0.6rem;             /* ✅ 約 40% */
-    font-weight: 500;
+    font-size: 1.2rem;             /* ✅ 約 40% */
+    font-weight: 300;
 
     color: #5a3414;                /* 深啡字 */
     text-decoration: none;
-
-    border-bottom: 1px solid #e6d8c8;  /* ✅ 淺啡線 */
+    border-bottom: 1px solid #5a3414;  /* ✅ 淺啡線 */
+    background: #ffffff;           /* 淺啡底 */
   }
 
   /* 最後一條線唔要 */
