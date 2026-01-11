@@ -928,7 +928,7 @@ align-items: stretch;
     color: #5a3414;
     text-decoration: none;
 
-    background: transparent;      /* ❌ 移走白色 */
+    //background: transparent;      /* ❌ 移走白色 */
     border-bottom: 1px solid #d6c2ad;  /* ✅ 淺啡線 */
   }
 
