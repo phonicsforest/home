@@ -1,91 +1,29 @@
-
 /* =========================================
-   Phonics Forest – Forest Theme (FINAL)
-   視覺層：顏色 / 氣氛 / Menu / 元件風格
+   Phonics Forest – Forest Theme (FINAL CLEAN)
    ========================================= */
 
-/* ---------- 色彩定義（Earth tone） ---------- */
+/* ---------- 色彩定義 ---------- */
 :root {
   --forest-brown: #7b4a1e;
   --forest-brown-light: #c89a6a;
-  --forest-green: #2c7a5a;
+  --forest-brown-deep: #4a2a14;
   --forest-green-main: #a8b35a;
   --forest-green-deep: #829212;
   --forest-soft-green: #eef5f1;
   --forest-line: #d8e6df;
-  --forest-text-muted: #567d6f;
-  --forest-brown-deep: #4a2a14;
---heading-brown-dark: #5a3214;
+  --heading-brown-dark: #5a3214;
 }
-
-
-/* ===============================
-   Hero title with logo
-   =============================== */
-
-/* Hero CTA button – no underline, stable */
-.btn-primary,
-.btn-primary:link,
-.btn-primary:visited,
-.btn-primary:hover,
-.btn-primary:active {
-  text-decoration: none !important;
-  color: #ffffff;
-}
-
-
-.hero-title {
-position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;                 /* logo 與文字距離 */
- /* flex-wrap: wrap; */  /* 手機可自動換行 */
- transform: translateX(-40px);  
-}
-
-
-.hero-text {
-  text-align: center;
-white-space: nowrap;       /* 防止斷行（如要） */
-}
-
-/* Logo 圖片 */
-.hero-logo {
-  width: 140px;               /* 可調：36–48 都靚 */
-  height: auto;
-flex-shrink: 0; 
-}
-
-@media (max-width: 600px) {
-  .hero-title {
-    flex-direction: column;
-    transform: none;        /* 手機唔偏 */
-    gap: 12px;
-  }
-
-  .hero-text {
-    text-align: center;
-    white-space: normal;
-  }
-
-  .hero-logo {
-    width: 140px;
-  }
-}
-
 
 /* =========================================
-   Header / Navigation (Menu Bar)
+   HEADER / NAVIGATION
    ========================================= */
 
 .site-header {
   background: var(--forest-brown);
   border-bottom: 3px solid var(--forest-green-main);
-
   height: 38px;
-position: relative;
-  z-index: 1000;   /* header 本身提到上層 */
+  position: relative;
+  z-index: 1000;
   display: flex;
   align-items: center;
 }
@@ -96,299 +34,124 @@ position: relative;
   margin: 0 auto;
   padding: 0 16px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  gap: 6px;        /* 👈 logo 同 menu 距離 */
+  position: relative;
 }
 
-/* Logo */
-.logo {
-  color: #f5f3ec;
-  font-size: 1.05rem;
-  font-weight: 700;
-  line-height: 1;
-  white-space: nowrap;
-}
+/* ===== Desktop menu ===== */
 
-/* Nav */
-.main-nav {
+#mainNav {
   display: flex;
+  gap: 28px;
   align-items: center;
-  height: 100%;
 }
 
-.main-nav a {
+#mainNav a {
   color: #f5f3ec;
   text-decoration: none;
-font-size: 1.0rem !important;
+  font-size: 1rem;
   font-weight: 600;
-  line-height: 1;
-  padding: 0 8px;
-  margin-left: 14px;
+  padding: 0 10px;
   height: 36px;
   display: flex;
   align-items: center;
+  white-space: nowrap;
 }
 
-/* Hover */
-.main-nav a:hover:not(.active) {
+#mainNav a:hover:not(.active) {
   background: rgba(255,255,255,0.1);
 }
 
-/* Active */
-.main-nav a.active {
+#mainNav a.active {
   background: var(--forest-brown-light);
   color: #ffffff;
 }
 
-/* Hero description text */
-.hero-desc {
-  color: #7b4a1e;        /* 深啡色 */
-  font-size: 1.05rem;
-  margin-top: 16px;
+/* ===== Hamburger button (default hidden) ===== */
+
+.menu-toggle {
+  display: none;
 }
 
-/* Hero CTA button */
-.hero-cta {
-  margin-top: 40px;
-  text-align: center;
-}
-
-
-/* Hero CTA button – LARGE dark brown */
-.btn-primary {
-  display: inline-block;
-
-  background: #7b4a1e;      /* 👈 深啡色 */
-  color: #ffffff;
-
-  font-size: 1.3rem;        /* 👈 明顯再大 */
-  font-weight: 500;
-
-  padding: 12px 28px;       /* 👈 整體放大 */
-  border-radius: 999px;     /* 👈 左右全圓 */
-
-  box-shadow: 0 8px 22px rgba(0,0,0,0.25);
-
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 32px rgba(0,0,0,0.35);
-
-}
-
-@media (max-width: 600px) {
-  .btn-primary {
-    font-size: 1.25rem;
-    padding: 18px 44px;
-  }
-}
-
-
-
-
-
-/* ===============================
-   Hero video – clean white frame
-   =============================== */
-
-.hero-video-frame {
-  display: inline-block;
-  background: #ffffff;
-  padding: 6px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-
-  width: 70%;          /* 👈 關鍵：整體縮到 70% */
-  max-width: 820px;    /* 👈 保護上限（桌面唔會過大） */
-}
-
-
-/* 影片本身 */
-.hero-video-frame video {
-  display: block;              /* ❗消除底部空隙 */
-  width: 100%;
-  height: auto;
-
-  border-radius: 0;            /* 👈 明確：影片不圓角 */
-  background: transparent;     /* ❗唔要黑底 */
-}
-
-.hero-video iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-/* 內層 video 容器 */
-.hero-video {
-width: 100%;
-  aspect-ratio: 16 / 9;
-  background: #000000;
-  border: 6px solid #ffffff;   /* 👈 白邊 */
-box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-border-radius: 0;            /* 👈 方角 */
-  padding: 0;
-
-}
-
-/* Video 本身 */
-.hero-video video {
-  display: block;            /* ❗消除底部白 gap */
-  width: 100%;
-  height: auto;
-}
+/* =========================================
+   MOBILE MENU (唯一版本，無衝突)
+   ========================================= */
 
 @media (max-width: 768px) {
-  .hero-video-frame {
-    width: 90%;
+
+  /* 隱藏 desktop menu */
+  #mainNav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    flex-direction: column;
+    align-items: stretch;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    z-index: 1100;
+  }
+
+  /* 顯示 menu（只靠 .show） */
+  #mainNav.show {
+    display: flex;
+  }
+
+  /* Menu items */
+  #mainNav a {
+    width: 100%;
+    text-align: center;
+    padding: 14px 0;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #5a3414;
+    background: #ffffff;
+    border-bottom: 1px solid #e2d6c8;
+  }
+
+  #mainNav a.active {
+    background: #f3e6d8;
+    color: #4a2a14;
+  }
+
+  #mainNav a:last-child {
+    border-bottom: none;
+  }
+
+  /* Hamburger */
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--forest-brown);
+    color: #ffffff;
+    font-size: 22px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 14px;
+    top: 6px;
+    z-index: 1200;
   }
 }
 
 /* =========================================
-   Section 標題視覺
+   HERO / SECTIONS（原設計保留）
    ========================================= */
-
-/* =========================================
-   Global H2 style (ALL pages)
-   ========================================= */
-
-h2 {
-  color: var(--heading-brown-dark);
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 1.35;
-  margin-bottom: 18px;
-}
-
-@media (max-width: 600px) {
-  h2 {
-    font-size: 1.5rem;
-  }
-}
-
-/* =========================================
-   Feature 卡片（白底區用）
-   ========================================= */
-
-.section-white .feature,
-.section-soft-green .feature {
-  background: #ffffff;
-  border: 1px solid var(--forest-line);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.04);
-}
-
-/* Hover（輕微） */
-.feature:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(44, 122, 90, 0.12);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-/* =========================================
-   Part 2 – Audience（成人／親子／教師）
-   ========================================= */
-
-.audience {
-  text-align: center;
-}
-
-.audience-item {
-  background: transparent;
-  border: none;
-  box-shadow: none;
-}
-
-/* 白色圓形底 */
-.audience-icon {
-  width: 170px;
-  height: 170px;
-  margin: 0 auto 18px;
-  background: #ffffff;
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Icon 圖片 */
-.audience-icon img {
-  width: 140%;
-  height: 100%;
-  object-fit: contain;
-}
-
-/* 標題 */
-.audience-item h3 {
-  color: #ffffff;
-  font-size: 1.2rem;
-  margin-bottom: 8px;
-}
-
-/* 說明文字 */
-.audience-item p {
-  color: rgba(255,255,255,0.9);
-  font-size: 0.95rem;
-}
-
-/* =========================================
-   淺綠 section 分隔感
-   ========================================= */
-.section-intro h2 {
-  color: #5a3416;   /* 👈 深啡色（比 menu 再深少少） */
-}
-
-
-.index-page .section-soft-green {
-  border-top: 1px solid var(--forest-line);
-  border-bottom: 1px solid var(--forest-line);
-background: #eef5f1;   /* ✅ 與 index 完全一致 */
-  color: #222;
-}
-
-/* Hero 內顯示英文 */
-.section-green [lang="en"] {
-  display: block;
-}
-/* ===============================
-   HERO background – forest
-   =============================== */
-
-.section-green h1 {
-  color: #ffffff;
-}
-
-.hero-desc {
-  color: #4a2a14;
-}
-
-.hero-en {
-  display: block;
-  font-size: 0.55em;
-  font-weight: 400;
-  margin-top:7px;
-  letter-spacing: 0.5px;
-}
 
 .section-green {
-  background-color: #a8b35a;    
+  background-color: #a8b35a;
   background-image: url("../images/forest.png");
   background-repeat: no-repeat;
   background-position: center top;
-  //background-size: contain;   /* ✅ 原比例顯示 */
+  padding-top: 20px;
+  padding-bottom: 80px;
 }
-
-/* INDEX hero background */
-.index-hero.section-green {
-  background-image: url("../images/forest.png");
-  background-size: contain;      /* 🔑 左右完整顯示 */
-  background-position: center top;
-  background-repeat: no-repeat;
-
-  background-color: #a8b35a;     /* 綠色底補位 */
-}
-
 
 @media (max-width: 600px) {
   .section-green {
@@ -396,565 +159,41 @@ background: #eef5f1;   /* ✅ 與 index 完全一致 */
   }
 }
 
-.section-green {
-  padding-top: 20px;   /* 原本 60 → 拉近一半 */
-  padding-bottom: 80px;
-}
-.section-green a,
-.section-brown a {
-  color: #ffffff;
-  text-decoration: underline;
+h2 {
+  color: var(--heading-brown-dark);
+  font-size: 1.5rem;
+  margin-bottom: 18px;
 }
 
 /* =========================================
-   Footer
+   COURSES
+   ========================================= */
+
+.course-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 48px;
+}
+
+@media (max-width: 900px) {
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.course-card {
+  background: #ffffff;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  padding: 28px;
+}
+
+/* =========================================
+   FOOTER
    ========================================= */
 
 footer {
   border-top: 1px solid var(--forest-line);
   background: #f1f6f3;
-}
-
-/* =========================================
-   Mobile 微調
-   ========================================= */
-
-@media (max-width: 600px) {
-
-  .site-header {
-    height: 36px;
-    min-height: 36px;
-    max-height: 36px;
-  }
-
-  .logo {
-    font-size: 0.95rem;
-  }
-
-  .main-nav a {
-    font-size: 0.85rem;
-    margin-left: 10px;
-  }
-
-  .audience-icon {
-    width: 120px;
-    height: 120px;
-  }
-
-  .audience-icon img {
-    width: 64px;
-  }
-}
-
-.section-brown {
-  background: #7b4a1e;        /* 深啡 */
-  color: #ffffff;
-  padding-top: 36px;     /* 原本 60 */
-  padding-bottom: 20px;
-}
-
-/* ===============================
-   Intro rows – image + text columns
-   =============================== */
-
-.intro-row {
-  display: grid;
-  grid-template-columns: 1fr 2fr; /* 👈 圖 1 份，字 2 份 */
-  gap: 0px;
-  align-items: center;
-  margin-top: 0px;
-}
-
-.intro-image {
-  text-align: center;
-}
-
-.intro-image img {
-  max-width: 220px;   /* 👈 控制圖大小 */
-  width: 100%;
-  height: auto;
-}
-.intro-text h2 {
-  margin-bottom: 14px;
-}
-
-.intro-text p {
-  max-width: 820px;   /* 👈 行長舒服 */
-}
-
-
-@media (max-width: 768px) {
-  .intro-row {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    text-align: center;
-  }
-
-  .intro-text p {
-    max-width: none;
-  }
-}
-
-/* About page header with forest background */
-.page-header.section-green {
-  background-image: url("../images/forest.png");
-  background-size: cover;        /* 🔑 填滿整個 header */
-  background-position: center top; /* 🔑 上面保留，下面可裁 */
-  background-repeat: no-repeat;
-
-  color: #ffffff;
-}
-
-
-.about-img img {
-  width: 180px;
-}
-
-
-/* =========================================
-   About page – brown divider (container width)
-   ========================================= */
-.about-points > section {
-  padding-top: 30px;
-  padding-bottom: 0px;
-}
-
-/* 每個 point 的 container */
-.about-points > section .container {
-  padding-top: 6px;
-  padding-bottom: 0px;
-  position: relative;
-}
-
-/* 深啡色橫線：完全跟內文寬度 */
-.about-points > section .container::before {
-  content: "";
-  display: block;
-  width: 100%;                 /* ✅ 跟 container */
-  height: 1px;
-  background-color: #5a3214;   /* 深啡色 */
-  margin: 0 0 12px 0;          /* 線同內文距離（已拉近） */
-}
-
-/* ❌ 第一個 point（故事記憶法）上面唔要線 */
-.about-points > section:first-child .container::before {
-  display: none;
-}
-/* ===============================
-   Article page – centered narrow layout (desktop)
-   =============================== */
-/* Article card link – no blue / purple / underline */
-.article-link,
-.article-link:link,
-.article-link:visited,
-.article-link:hover,
-.article-link:active {
-  text-decoration: none;
-  color: inherit;
-}
-
-
-
-
-
-/* Article card title colour */
-.article-card h3 {
-  color: var(--forest-brown-deep); /* 深啡 */
-}
-
-.article-link:hover .article-card {
- border-color: var(--forest-brown-deep);
-}
-
-.article-page {
-  padding: 60px 16px;
-}
-
-/* Desktop：限制闊度，置中 */
-@media (min-width: 1024px) {
-  .article-container {
-    max-width: 55vw;     /* 👈 約畫面一半，可改 50vw / 60vw */
-    margin: 0 auto;      /* 👈 水平置中 */
-  }
-}
-
-/* Mobile：全闊 */
-@media (max-width: 1023px) {
-  .article-container {
-    max-width: 100%;
-  }
-}
-
-/* 🔑 文章內圖片跟 container 闊度 */
-.article-container img,
-.article-image {
-  max-width: 100%;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 24px 0;
-}
-
-/* Article figure – left aligned */
-.article-figure {
-  margin: 28px 0;          /* 👈 齊左，不再 auto */
-  max-width: 55vw;         /* 👈 跟 article container 一樣 */
-}
-
-/* Image itself */
-.article-figure img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Hide caption visually but keep for SEO */
-.article-figure.no-caption figcaption {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap;
-  border: 0;
-}
-
-.article-title-line {
-  display: block;
-  margin-top: 6px;
-  color: black;
-  font-weight: 400;     /* 👈 幼身（Normal） */
-  font-size: 0.85em;    /* 👈 比主標題細少少 */
-  letter-spacing: 0.5px;
-}
-
-/* ===============================
-   Article title
-   =============================== */
-
-.article-title {
-  color: var(--forest-green-deep);
-}
-
-/* ===============================
-   Article – Phonics comparison table
-   =============================== */
-
-.phonics-compare-table {
-  width: 100%;
-  max-width: 100%;
-  border-collapse: collapse;          /* 邊框合併 */
-  margin: 32px 0 40px;                /* 👈 上下留白 */
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-/* 表頭 */
-.phonics-compare-table thead th {
-  border: 1px solid var(--forest-brown);
-  background: var(--forest-soft-green);
-  color: var(--forest-brown-deep);
-  padding: 12px 14px;
-  text-align: left;
-  font-weight: 600;
-}
-
-/* 表格內容 */
-.phonics-compare-table tbody td {
-  border: 1px solid var(--forest-brown);
-  padding: 12px 14px;
-  vertical-align: top;
-}
-
-/* 第一欄（比較項目） */
-.phonics-compare-table tbody td:first-child {
-  width: 22%;
-  font-weight: 600;
-  color: var(--forest-brown-deep);
-  background: #fafafa;
-}
-
-
-/* 手機：字細啲＋可橫向 scroll */
-@media (max-width: 768px) {
-  .phonics-compare-table {
-    font-size: 0.9rem;
-    display: block;
-    overflow-x: auto;
-  }
-}
-
-.article-figure {
-  margin: 24px 0;
-}
-
-.article-figure figcaption {
-  margin-top: 4px;
-  font-size: 0.85rem;
-  color: #666;
-  text-align: left;
-}
-
-.push-right {
-  float: right;
-}
-
-.star {
-  color: #f4c430;
-  font-size: 0.85em;
-  white-space: nowrap;
-}
-
-.article-content img {
-  border: 1px solid #e2d6c8;   /* 淺啡色，幼邊框 */
-  padding: 4px;               /* 圖與邊框距離 */
-  background: #fff;           /* 防止深色底影響 */
-}
-
-.article-table {
-  width: 60%;
-  border-collapse: collapse;
-  font-size: 1rem;
-}
-
-.article-table td {
-  border: 1px solid #7b4a1e;   /* 👈 深啡色框線 */
-  padding: 8px 20px;          /* 👈 內距，唔會迫 */
-  vertical-align: middle;
-}
-
-/* 左邊分類字稍為突出（可留可刪） */
-.article-table td:first-child {
-  font-weight: 600;
-}
-
-.article-divider {
-  border: none;
-  border-top: 1px solid var(--forest-brown-deep);
-  margin: 3rem 0;
-}
-
-
-/* ===============================
-   Courses – Two Columns Layout
-   =============================== */
-
-.course-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* 👈 左右各一欄 */
-  gap: 32px;
-  align-items: start;
-  margin-top: 48px;
-}
-
-/* 單個課程卡 */
-.course-card {
-  border: 1px solid #e3e3e3;
-  border-radius: 8px;
-  padding: 28px;
-  background: #fff;
- width: 100%;
-}
-
-/* 課程圖片 */
-.course-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-  margin-bottom: 20px;
-}
-
-/* 標題 */
-.course-card h2 {
-  margin-top: 0;
-  color: var(--forest-brown-deep);
-}
-
-/* Mobile：自動變直排 */
-@media (max-width: 900px) {
-  .course-grid {
-    grid-template-columns: 1fr; /* 👈 手機一行一個 */
-  }
-}
-
-/* WhatsApp Button */
-.btn-whatsapp {
-  display: inline-block;
-  margin-top: 16px;
-  padding: 12px 20px;
-  background: #a8b35a;          /* WhatsApp 綠 */
-  color: #fff;
-  font-weight: 600;
-  border-radius: 999px;
-  text-decoration: none;
-  font-size: 0.95rem;
-}
-
-.btn-whatsapp:hover {
-  background: #829212;
-}
-
-@media (max-width: 768px) {
-  .course-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-/* Menu 左對齊 */
-.main-nav {
-  display: flex;
-  gap: 18px;
-  white-space: nowrap;
-}
-
-/* Menu 字唔會被切 */
-.main-nav a {
-  white-space: nowrap;
-}
-
-/* WhatsApp icon */
-.nav-whatsapp img {
-  width: 28px;
-  height: 28px;
-}
-
-/* ===== Mobile Handling ===== */
-@media (max-width: 768px) {
-
-  .nav-clean {
-    gap: 12px;
-  }
-
-  
-  .main-nav::-webkit-scrollbar {
-    display: none;
-  }
-
-  .main-nav a {
-    font-size: 0.9rem;
-  }
-
-  /* WhatsApp 保證可見 */
-  .nav-whatsapp {
-    flex-shrink: 0;
-  }
-}
-
-/* ===== Desktop / Tablet ===== */
-.menu-toggle {
-  display: none;
-}
-
-/* 主選單橫向 */
-#mainNav {
-  display: flex;
-  gap: 20px;
-}
-
-.nav-container {
-  display: flex;
-  justify-content: center;   /* 🔑 全部置中 */
-  align-items: center;
-  position: relative;
-}
-
-/* 桌面選單 */
-.main-nav {
-  display: flex;
-  gap: 28px;
-align-items: stretch;
-}
-
-
-@media (max-width: 768px) {
-
-  /* ☰ 按鈕 */
-  .menu-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: #7b4a1e;
-    color: #ffffff;
-    font-size: 24px;
-
-    border: none;
-    cursor: pointer;
-
-    position: absolute;
-    right: 16px;
-    top: 8px;
-    z-index: 1200;
-  }
-
-  /* ===== 整塊下拉選單（一塊過） ===== */
-  #mainNav {
-    display: none;
-    position: absolute;
-    top: 100%;          /* 貼 header 底 */
-    left: 0;
-    width: 100%;
-
-    background: #ffffff;     /* ✅ 實白色 */
-    z-index: 1100;
-
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;    /* 每行撐滿 */
-
-    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
-  }
-
-  /* 顯示 */
-  #mainNav.show {
-    display: flex;
-  }
-
-  /* ===== Menu item ===== */
-  #mainNav a {
-    width: 100%;
-    text-align: center;
-
-    padding: 14px 0;
-    font-size: 1.2rem;       /* 約 desktop 40% 感覺 */
-    font-weight: 400;
-
-    color: #5a3414;
-    text-decoration: none;
-
-    background: transparent;
-    border-bottom: 1px solid #e2d6c8;  /* 淺啡線 */
-  }
-
-  /* Active */
-  #mainNav a.active {
-    background: #f3e6d8;
-    color: #4a2a14;
-  }
-
-  /* 最後一條線唔要 */
-  #mainNav a:last-child {
-    border-bottom: none;
-  }
-}
-
-
-@media (min-width: 769px) {
-
-  .menu-toggle {
-    display: none;
-  }
-
-  #mainNav {
-    display: flex;
-    gap: 28px;
-    align-items: center;
-  }
-
 }
