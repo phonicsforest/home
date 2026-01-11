@@ -869,46 +869,45 @@ align-items: stretch;
 }
 
 
+/* =========================================
+   MOBILE MENU (唯一版本，無衝突)
+   ========================================= */
+
+
 @media (max-width: 768px) {
 
-  /* ☰ 按鈕 */
+  /* Hamburger */
   .menu-toggle {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    background: #7b4a1e;
+    background: var(--forest-brown);
     color: #ffffff;
-    font-size: 24px;
-
+    font-size: 22px;
     border: none;
     cursor: pointer;
-
     position: absolute;
-    right: 16px;
-    top: 8px;
+    right: 14px;
+    top: 6px;
     z-index: 1200;
   }
 
   /* ===== 整塊下拉選單（一塊過） ===== */
+  /* 隱藏 desktop menu */
   #mainNav {
     display: none;
     position: absolute;
-    top: 100%;          /* 貼 header 底 */
+    top: 100%;
     left: 0;
     width: 100%;
-
-    background: #ffffff;     /* ✅ 實白色 */
-    z-index: 1100;
-
-    display: flex;
+    background: #ffffff;
     flex-direction: column;
-    align-items: stretch;    /* 每行撐滿 */
-
+    align-items: stretch;
     box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    z-index: 1100;
   }
 
   /* 顯示 */
@@ -916,20 +915,16 @@ align-items: stretch;
     display: flex;
   }
 
-  /* ===== Menu item ===== */
+  /* Menu items */
   #mainNav a {
     width: 100%;
     text-align: center;
-
     padding: 14px 0;
-    font-size: 1.2rem;       /* 約 desktop 40% 感覺 */
+    font-size: 1.2rem;
     font-weight: 400;
-
     color: #5a3414;
-    text-decoration: none;
-
-    background: transparent;
-    border-bottom: 1px solid #e2d6c8;  /* 淺啡線 */
+    background: #ffffff;
+    border-bottom: 1px solid #e2d6c8;
   }
 
   /* Active */
