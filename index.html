@@ -30,18 +30,21 @@ body {
      =============================== -->
 <header class="site-header">
   <div class="nav-container">
-    <nav id="mainNav">
+
+    <!-- ☰（手機用） -->
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
+
+    <!-- 主選單 -->
+    <nav class="main-nav" id="mainNav">
       <a href="index.html" class="active">Home</a>
       <a href="courses.html">Courses</a>
       <a href="about.html">About Us</a>
-      <a href="articles.html">All About Phonics</a>
+      <a href="article.html">All About Phonics</a>
       <a href="contact.html">Contact</a>
     </nav>
 
-    <button class="menu-toggle" aria-label="Open menu">☰</button>
   </div>
 </header>
-
 
 <!-- ===============================
      PART 1 – HERO（綠底白字）
@@ -325,6 +328,7 @@ and spiral revision to help children and adults build long-term reading and spel
 
 
 
+</script>
 <script>
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.getElementById('mainNav');
@@ -333,6 +337,7 @@ and spiral revision to help children and adults build long-term reading and spel
     nav.classList.toggle('show');
   });
 </script>
+
 
 </body>
 </html>
