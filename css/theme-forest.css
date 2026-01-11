@@ -871,44 +871,43 @@ align-items: stretch;
 
 @media (max-width: 768px) {
 
+  /* ☰ 按鈕（保留） */
   .menu-toggle {
-display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-z-index: 1100;
+
     width: 48px;
     height: 48px;
-    border-radius: 50%;          /* 🔵 圓形 */
-    background: #7b4a1e;         /* 深啡 */
-    color: #fff;
+    border-radius: 50%;
+    background: #7b4a1e;
+    color: #ffffff;
     font-size: 24px;
 
     border: none;
     cursor: pointer;
 
     position: absolute;
-    right: 16px;                 /* 右上角 */
+    right: 16px;
     top: 8px;
+
+    z-index: 1100;
   }
 
-  
-.main-nav a:not(:last-child) {
-    border-bottom: 1px solid #eee;
-  }
-
-/* 初始隱藏 menu */
-  
-#mainNav {
-    display: none;
+  /* ===== 下接式選單本體 ===== */
+  #mainNav {
+    display: none;                 /* 初始隱藏 */
     position: absolute;
-    top: 100%;              /* 🔑 貼住 header 底 */
+    top: 100%;                     /* 貼住 header 底 */
     left: 0;
     width: 100%;
 
-    background: #ffffff;
+    background: #ffffff;           /* ✅ 白色底 */
     z-index: 1050;
 
     flex-direction: column;
+    align-items: center;           /* ✅ 整體置中 */
+
     box-shadow: 0 10px 30px rgba(0,0,0,0.25);
   }
 
@@ -917,21 +916,34 @@ z-index: 1100;
     display: flex;
   }
 
-/* Menu item */
+  /* ===== Menu item ===== */
   #mainNav a {
-    padding: 14px 18px;
-    font-size: 1rem;
-    color: #5a3414;
+    width: 100%;
+    text-align: center;            /* ✅ 字置中 */
+
+    padding: 10px 0;               /* ✅ 扁身 */
+    font-size: 0.6rem;             /* ✅ 約 40% */
+    font-weight: 500;
+
+    color: #5a3414;                /* 深啡字 */
     text-decoration: none;
-    border-bottom: 1px solid #eee;
+
+    border-bottom: 1px solid #e6d8c8;  /* ✅ 淺啡線 */
   }
 
+  /* 最後一條線唔要 */
+  #mainNav a:last-child {
+    border-bottom: none;
+  }
+
+  /* Active 狀態 */
   #mainNav a.active {
-    background: var(--forest-brown-deep);
-    color: #fff;
+    background: #f3e6d8;           /* 淺啡底 */
+    color: #4a2a14;
   }
 
 }
+
 
 @media (min-width: 769px) {
 
