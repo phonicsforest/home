@@ -874,14 +874,21 @@ align-items: stretch;
   #mainNav {
     display: none;
     position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
+    top: 50px;
+right: 14px;
+    left: auto;
+    width: 60%;
     background: #ffffff;
     flex-direction: column;
     align-items: stretch;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 12px 0px rgba(0,0,0,0.3);
     z-index: 1100;
+flex-direction: column;
+  gap: 0;           /* 確保項目之間沒有間隙 */
+  padding: 0;       /* 確保容器內部沒有內邊距 */
+  margin: 0;        /* 確保容器外部沒有外邊距 */
+  list-style: none; /* 如果是 ul 標籤，去掉點點 */
+border: 1px solid #e2d6c8; /* 可以加一個整體的邊框 */
   }
 
   /* 顯示 */
@@ -891,11 +898,13 @@ align-items: stretch;
 
   /* Menu items */
   #mainNav a {
+display: block;   /* 確保它佔滿全寬 */
+  margin: 10;        /* 移除外邊距 */
     width: 100%;
     text-align: center;
-    padding: 14px 0;
-    font-size: 1.2rem;
-    font-weight: 400;
+    padding: 30px 0;
+    font-size: 2.2rem;
+    font-weight: 700;
     color: #5a3414;
     background: #ffffff;
     border-bottom: 1px solid #e2d6c8;
