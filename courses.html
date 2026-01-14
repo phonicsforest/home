@@ -28,8 +28,8 @@
 
     <!-- 主選單 -->
     <nav class="main-nav" id="mainNav">
-      <a href="index.html" >Home</a>
-      <a href="courses.html" class="active">Courses</a>
+      <a href="index.html">Home</a>
+      <a href="courses.html"  class="active">Courses</a>
       <a href="about.html">About Us</a>
       <a href="article.html">All About Phonics</a>
       <a href="contact.html">Contact</a>
@@ -173,13 +173,74 @@ lesson 45&nbsp;&nbsp;&nbsp;&nbsp;open syllable (2)<br>
         <p>
          全套課程使用故事及串連記憶法, 令學生可於短時間內輕鬆學會Phonics, 每堂內容包括温習, 聽Phonics故事, Phonics遊戲, 拼讀及串字, 課後有少量功課以加強記憶, 提供pdf課本。
         </p>
-<div class="hero-video">
+<figure class="hero-video">
   <iframe
     src="https://www.youtube.com/embed/zJPN2Cu3CsI"
-    title="YouTube video player"
+    title="Phonics Forest Zoom lesson introduction"
     allowfullscreen>
   </iframe>
-</div>
+
+  <figcaption>
+    Zoom課堂流程
+  </figcaption>
+</figure>
+
+<figure class="hero-video">
+  <div class="hero-video-box">
+    <video
+      controls
+      preload="metadata"
+      poster="images/video-cover.jpg">
+      <source src="video/reading1.mp4" type="video/mp4">
+    </video>
+  </div>
+  <figcaption>
+    Josh | 4歲3個月 | 第4堂
+  </figcaption>
+</figure>
+
+<figure class="hero-video">
+  <div class="hero-video-box">
+    <video
+      controls
+      preload="metadata"
+      poster="images/video-cover.jpg">
+      <source src="video/reading1.mp4" type="video/mp4">
+    </video>
+  </div>
+  <figcaption>
+    家姐Renee 6歲、妹妹Ria 4歲9個月 ，學咗7堂做到咁真係好叻女！
+  </figcaption>
+</figure>
+
+
+<figure class="hero-video">
+  <div class="hero-video-box">
+    <video
+      controls
+      preload="metadata"
+      poster="images/video-cover.jpg">
+      <source src="video/reading3.mp4" type="video/mp4">
+    </video>
+  </div>
+  <figcaption>
+    Sheryl | K3 | 學了 Phonics 10 個月
+  </figcaption>
+</figure>
+
+<figure class="hero-video">
+  <div class="hero-video-box">
+    <video
+      controls
+      preload="metadata"
+      poster="images/video-cover.jpg">
+      <source src="video/reading4.mp4" type="video/mp4">
+    </video>
+  </div>
+  <figcaption>
+    Alessa | P1 | 學了Phonics 15個月
+  </figcaption>
+</figure>
 
         <h3>對象 :</h3>
         <p>
@@ -298,6 +359,14 @@ lesson 46&nbsp;&nbsp;&nbsp;&nbsp;IPA
     ]
   }
 }
+</script>
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('mainNav');
+
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('show');
+  });
 </script>
 
 </body>

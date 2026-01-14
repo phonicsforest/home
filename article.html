@@ -120,10 +120,10 @@ content="All About Phonics is a curated collection of expert phonics articles fo
 
     <!-- 主選單 -->
     <nav class="main-nav" id="mainNav">
-      <a href="index.html" >Home</a>
+      <a href="index.html">Home</a>
       <a href="courses.html">Courses</a>
       <a href="about.html">About Us</a>
-      <a href="article.html"  class="active">All About Phonics</a>
+      <a href="article.html" class="active">All About Phonics</a>
       <a href="contact.html">Contact</a>
     </nav>
 
@@ -300,6 +300,14 @@ buttons.forEach(btn => {
     ]
   }
 }
+</script>
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('mainNav');
+
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('show');
+  });
 </script>
 
 </body>
