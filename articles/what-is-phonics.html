@@ -27,11 +27,11 @@ content="What is Phonics？Phonics 是一套英文拼音學習方法，幫助孩
 
     <!-- 主選單 -->
     <nav class="main-nav" id="mainNav">
-      <a href="index.html" >Home</a>
-      <a href="courses.html">Courses</a>
-      <a href="about.html">About Us</a>
-      <a href="article.html">All About Phonics</a>
-      <a href="contact.html">Contact</a>
+      <a href="../index.html" >Home</a>
+      <a href="../courses.html">Courses</a>
+      <a href="../about.html">About Us</a>
+      <a href="../article.html">All About Phonics</a>
+      <a href="../contact.html">Contact</a>
     </nav>
 
   </div>
@@ -226,6 +226,14 @@ Phonics 是一套英文閱讀與拼字方法，透過學習字母（或字母組
     }
   ]
 }
+</script>
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('mainNav');
+
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('show');
+  });
 </script>
 
 </body>

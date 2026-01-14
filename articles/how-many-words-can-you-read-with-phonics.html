@@ -27,11 +27,11 @@ content="透過真實新聞文章示例，解析 Phonics 各學習階段（A–Z
 
     <!-- 主選單 -->
     <nav class="main-nav" id="mainNav">
-      <a href="index.html" >Home</a>
-      <a href="courses.html">Courses</a>
-      <a href="about.html">About Us</a>
-      <a href="article.html">All About Phonics</a>
-      <a href="contact.html">Contact</a>
+      <a href="../index.html" >Home</a>
+      <a href="../courses.html">Courses</a>
+      <a href="../about.html">About Us</a>
+      <a href="../article.html">All About Phonics</a>
+      <a href="../contact.html">Contact</a>
     </nav>
 
   </div>
@@ -201,6 +201,14 @@ Prime Minister Sir </span>Keir <span style="color:red;">Starmer said <span style
 <footer>
   © 2026 Phonics Forest · Phonics 英文拼音課程（香港）
 </footer>
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('mainNav');
+
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('show');
+  });
+</script>
 
 </body>
 </html>

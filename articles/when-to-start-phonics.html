@@ -28,11 +28,11 @@
 
     <!-- 主選單 -->
     <nav class="main-nav" id="mainNav">
-      <a href="index.html" >Home</a>
-      <a href="courses.html">Courses</a>
-      <a href="about.html">About Us</a>
-      <a href="article.html">All About Phonics</a>
-      <a href="contact.html">Contact</a>
+      <a href="../index.html" >Home</a>
+      <a href="../courses.html">Courses</a>
+      <a href="../about.html">About Us</a>
+      <a href="../article.html">All About Phonics</a>
+      <a href="../contact.html">Contact</a>
     </nav>
 
   </div>
@@ -225,6 +225,14 @@ Ms Iman 亦是在成年後才正式學習 Phonics，深深體會到：如果在�
     }
   ]
 }
+</script>
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('mainNav');
+
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('show');
+  });
 </script>
 
 </body>
