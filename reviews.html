@@ -465,6 +465,14 @@ break-inside: avoid;
     modal.setAttribute("aria-hidden", "true");
   }
 </script>
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('mainNav');
+
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('show');
+  });
+</script>
 
 </body>
 </html>
