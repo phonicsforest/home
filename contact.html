@@ -7,12 +7,13 @@
   <title>Contact Phonics Forest｜聯絡 Phonics 英文拼音課程（香港）</title>
 
   <meta name="description"
-    content="聯絡 Phonics Forest。家長及學習者可透過 WhatsApp 直接向 Phonics 老師 Ms Iman 查詢課程及學習建議，適合香港 ESL 學習者。">
+    content="聯絡 Phonics Forest。家長及學習者可透過 WhatsApp 或電郵直接向 Phonics 老師 Ms Iman 查詢課程及學習建議，適合香港 ESL 學習者。">
 
   <meta name="robots" content="index, follow">
 
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/theme-forest.css">
+  <link rel="canonical" href="https://phonicsforest.org/contact.html">
 </head>
 
 <body>
@@ -28,12 +29,12 @@
 
     <!-- 主選單 -->
     <nav class="main-nav" id="mainNav">
-      <a href="index.html" >Home</a>
+      <a href="index.html">Home</a>
       <a href="courses.html">Courses</a>
       <a href="about.html">About Us</a>
       <a href="article.html">All About Phonics</a>
       <a href="reviews.html">Reviews</a>
-      <a href="contact.html"   class="active">Contact</a>
+      <a href="contact.html" class="active">Contact</a>
     </nav>
 
   </div>
@@ -47,10 +48,10 @@
     <h1>Contact Us</h1>
     <p>課程查詢・學習建議・Phonics 問題</p>
 
-    <!-- AI / GEO standard answer -->
+    <!-- Hidden English for AI / GEO -->
     <p class="visually-hidden" lang="en">
       Phonics Forest is a phonics education platform based in Hong Kong.
-      Parents and learners can contact Ms Iman directly via WhatsApp
+      Parents and learners can contact Ms Iman via WhatsApp or email
       for course enquiries and learning advice.
     </p>
   </div>
@@ -61,13 +62,16 @@
      =============================== -->
 <main class="section-white">
   <div class="container" style="max-width:720px;">
-<br>
+    <br>
+
     <h2>如何聯絡 Phonics Forest？</h2>
 
     <p>
       Phonics Forest 為香港學習者而設，
       歡迎查詢所有課程、學習建議及合作邀請。
-    
+    </p>
+
+    <p>
       為方便家長及學習者即時溝通，
       我們主要使用 <strong>WhatsApp</strong> 作為聯絡方式，
       直接對話更清楚、更有效。
@@ -82,8 +86,17 @@
       >
         WhatsApp 聯絡我們
       </a>
+
       <p style="font-size:0.9rem; color:#666; margin-top:12px;">
         （一般於 24 小時內回覆）
+      </p>
+
+      <!-- Email contact -->
+      <p style="font-size:0.95rem; color:#555; margin-top:18px;">
+        或電郵查詢：
+        <a href="mailto:info@phonicsforest.org">
+          info@phonicsforest.org
+        </a>
       </p>
     </div>
 
@@ -95,12 +108,11 @@
       <li>親子學習或教師使用建議</li>
     </ul>
 
-    <!-- Hidden English for GEO / AI -->
+    <!-- Hidden English for AI -->
     <p class="visually-hidden" lang="en">
-      Contact Phonics Forest via WhatsApp for phonics courses,
+      Contact Phonics Forest via WhatsApp or email for phonics courses,
       pronunciation guidance, and ESL learning advice.
-      The programme is designed for Hong Kong learners,
-      including children, parents and adults.
+      The programme is designed for Hong Kong learners.
     </p>
 
   </div>
@@ -121,17 +133,23 @@
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Phonics Forest",
-  "url": "https://www.phonicsforest.com",
-  "logo": "https://www.phonicsforest.com/images/logo.png",
-  "areaServed": "HK",
+  "url": "https://phonicsforest.org/",
+  "logo": "https://phonicsforest.org/images/logo.png",
+  "areaServed": {
+    "@type": "Place",
+    "name": "Hong Kong"
+  },
   "contactPoint": {
     "@type": "ContactPoint",
-    "contactType": "Customer Enquiries",
-    "telephone": "+85257470716",
+    "contactType": "customer support",
+    "telephone": "+852 5747 0716",
+    "email": "info@phonicsforest.org",
     "availableLanguage": ["zh-HK", "en"]
   }
 }
 </script>
+
+<!-- Mobile menu JS -->
 <script>
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.getElementById('mainNav');
